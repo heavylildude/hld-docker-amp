@@ -1,4 +1,4 @@
-# HLD Docker AMP Stack 🤘⚡
+# HLD Docker AMP Stack with SSL and htaccess 🤘⚡
 Welcome to the most gnarly, no-fuss, drop-in-and-slay local dev environment on the block. This is a full-power Apache, MySQL, and PHP stack, all neatly packed into Docker containers. It's like a portable dev server that follows you around, ready to rip whenever you are. No more installing a million things on your machine that go rogue later. Just pure, containerized bliss. ✨
 
 This rig is built to be a true "it just works" setup for any PHP project. Just drop your code in and go!
