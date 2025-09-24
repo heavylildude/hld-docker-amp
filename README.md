@@ -43,7 +43,7 @@ Once you're set up, your crib should look like this. The certs folder will be ma
 ## Quick Start Guide (Bugger-Friendly Edition) 🤙  
 Follow these steps and you'll be slayin' code in minutes. Let's get this bread! 🍞  
 
-#### Step 1: Forge Your Fake ID 💳 (SSL Certs)  
+### Step 1: Forge Your Fake ID 💳 (SSL Certs)  
 To get that sweet https:// vibe on localhost, you need a fake ID card, a.k.a. a self-signed SSL certificate.
 
 Inside the main project folder, create a new, empty folder named certs.
@@ -56,7 +56,7 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout certs/localhost.key 
 
 This will pop two files, localhost.key and localhost.crt, into your certs folder. Done. ✅
 
-#### Step 2: Spill The Tea ☕ (Configure Environment)
+### Step 2: Spill The Tea ☕ (Configure Environment)
 This is where you tell the containers your secret passwords. It's like the secret handshake to get into the treehouse.
 
 Find the file named .env.template.
