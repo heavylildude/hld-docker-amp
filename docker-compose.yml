@@ -1,0 +1,41 @@
+# docker-compose.yml
+services:
+  # The main webserver with Apache & PHP
+  webserver:
+    build:
+      context: . # Use the Dockerfile in this same folder
+    container_name: my_gnarly_webserver
+    ports:
+      - "8888:443" # Map your host port 8888 to the container's HTTPS port 443
+    volumes:
+      # Mount the current folder to the web root in the container
+      # This means any file you put here is live! ✨
+      - ./:/var/www/html
+    depends_on:
+      - db # Make sure the DB starts first
+    env_file: .env # Load secrets from .env
+    restart: unless-stopped
+
+  # The MySQL database service
+  db:
+    image: mysql:8.0
+    container_name: my_sick_db
+    volumes:
+      - db_data:/var/lib/mysql # This keeps your data safe even if you stop the container
+    env_file: .env # Load DB creds from .env
+    restart: unless-stopped
+
+  # phpMyAdmin for easy DB management, cuz who has time for CLI all day?
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: my_pma_bro
+    ports:
+      - "8081:80" # Access phpMyAdmin on http://localhost:8081
+    environment:
+      - PMA_HOST=db # Connect to our 'db' service
+    depends_on:
+      - db
+    restart: unless-stopped
+
+volumes:
+  db_data: # Defines the volume for the database
