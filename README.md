@@ -5,10 +5,10 @@ This rig is built to be a true "it just works" setup for any PHP project. Just d
 
 ## What's In The Box? 📦 (The Tech Stack)  
 Think of this like your ultimate custom skate deck, built with only the sickest parts:  
-The Deck (Web Server): Apache 2.4, fully loaded.  
-The Trucks (Backend Language): PHP 8.2, with all the essential modules ready to shred (mysqli, pdo, gd, zip, intl, and more).  
-The Wheels (Database): MySQL 8.0, rollin' smooth and fast.  
-The Bearings (DB Management): phpMyAdmin, because who has time to type SQL commands all day? 💅  
+**The Deck (Web Server):** Apache 2.4, fully loaded.  
+**The Trucks (Backend Language):** PHP 8.2, with all the essential modules ready to shred (mysqli, pdo, gd, zip, intl, and more).  
+**The Wheels (Database):** MySQL 8.0, rollin' smooth and fast.  
+**The Bearings (DB Management):** phpMyAdmin, because who has time to type SQL commands all day? 💅  
 
 ## Key Features 🔑
 ✅ Full Local HTTPS: Rock that https:// lock icon on localhost from day one.  
@@ -104,9 +104,11 @@ Heads Up! Your browser will throw a security fit the first time you visit. This 
 
 **Database Management:** Access phpMyAdmin at http://localhost:8081.  
 
-#### I've already dropped in three files for you to test everything:  
 
-index.php: A simple "Hello World" to make sure PHP is running.  
-session_test_1.php & session_test_2.php: Use these to confirm that PHP sessions are working perfectly between page loads. Just go to the first one and click the link.  
+
+### I've already dropped in three files for you to test everything:  
+
+**index.php**: A simple "Hello World" to make sure PHP is running.  
+**session_test_1.php** & **session_test_2.php**: Use these to confirm that PHP sessions are working perfectly between page loads. Just go to the first one and click the link.  
 
 And that's it! You're ready to build something gnarly. Go get 'em, tiger. ✨
