@@ -19,7 +19,8 @@ The Bearings (DB Management): phpMyAdmin, because who has time to type SQL comma
 
 ## Requirements 🛠️  
 All you need is one thing, brah. No excuses.  
-Docker Desktop installed on your machine.  
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed on your machine.
+- [Git](https://git-scm.com/) installed on your machine.
 
 ## File Structure 🗺️
 Once you're set up, your crib should look like this. The certs folder will be made by you!  
@@ -43,10 +44,26 @@ Once you're set up, your crib should look like this. The certs folder will be ma
 ## Quick Start Guide (Bugger-Friendly Edition) 🤙  
 Follow these steps and you'll be slayin' code in minutes. Let's get this bread! 🍞  
 
-### Step 1: Forge Your Fake ID 💳 (SSL Certs)  
+### Step 1: Get The Code 💻 (Clone The Repo)
+First up, you gotta get the code onto your machine. You can clone it directly from the official repo. Fire up your terminal and run this:
+
+```
+git clone https://github.com/heavylildude/hld-docker-amp.git
+```
+
+Once it's downloaded, hop into the new folder you just created:
+
+```
+cd hld-docker-amp
+```
+
+Easy peasy. Now you're in the command center.
+
+
+### Step 2: Forge Your Fake ID 💳 (SSL Certs)
 To get that sweet https:// vibe on localhost, you need a fake ID card, a.k.a. a self-signed SSL certificate.
 
-Inside the main project folder, create a new, empty folder named certs.
+Make sure in the root folder you got folder named certs (should be there if you clone this repo).
 
 Fire up your terminal (Git Bash on Windows is a solid choice) and run this one command. It uses the included openssl.cnf to forge a pro-level fake ID for your server.
 
@@ -56,7 +73,8 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout certs/localhost.key 
 
 This will pop two files, localhost.key and localhost.crt, into your certs folder. Done. ✅
 
-### Step 2: Spill The Tea ☕ (Configure Environment)
+
+### Step 3: Spill The Tea ☕ (Configure Environment)
 This is where you tell the containers your secret passwords. It's like the secret handshake to get into the treehouse.
 
 Find the file named .env.template.
@@ -65,7 +83,8 @@ Rename it to .env.
 
 Open the new .env file and swap out the placeholder text with your own bloody awesome passwords.
 
-Step 3: Fire Up The Engines! 🚀
+
+### Step 4: Fire Up The Engines! 🚀
 This is the moment of truth. In your terminal, from the main project folder, smash this command:
 
 ```
@@ -73,6 +92,8 @@ docker-compose up -d --build
 ```
 
 This tells Docker to read all the config files, build your custom webserver hot-rod from scratch, and spin up all the containers in the background. It might take a minute the first time, so go grab a coffee. ☕
+
+
 
 #### Vibe Check Your Setup ✅
 Once the command finishes, your new dev rig is live!  
