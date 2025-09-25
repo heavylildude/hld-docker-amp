@@ -8,7 +8,10 @@ services:
       context: . # Use the Dockerfile in this folder
     container_name: my_gnarly_webserver
     ports:
-      - "8888:443"
+      # --- THE VIP ENTRANCE ---
+      - "8888:443" # HTTPS lives here
+      # --- THE NEW GENERAL ADMISSION ENTRANCE ---
+      - "8889:80" # HTTP lives here
     volumes:
       # Mount the project folder so your code is live
       - ./:/var/www/html
@@ -22,6 +25,7 @@ services:
     image: mysql:8.0
     container_name: my_sick_db
     ports:
+      # --- THIS IS THE MAGIC LINE, BRAH ---
       # Open a public door for apps like HeidiSQL
       - "3306:3306"
     volumes:
