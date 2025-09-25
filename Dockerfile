@@ -3,6 +3,9 @@
 # Start with the official PHP 8.2 Apache image, it's a solid base
 FROM php:8.2-apache
 
+# Copy in our custom php settings
+COPY my-php-settings.ini /usr/local/etc/php/conf.d/my-php-settings.ini
+
 # Install all the PHP extensions you could want. The whole shebang. 💪
 RUN apt-get update && apt-get install -y \
     libfreetype-dev \

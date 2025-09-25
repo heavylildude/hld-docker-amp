@@ -33,6 +33,7 @@ services:
       - "8081:80" # Access phpMyAdmin on http://localhost:8081
     environment:
       - PMA_HOST=db # Connect to our 'db' service
+      - PMA_UPLOAD_LIMIT=128M # The secret handshake for big uploads
     depends_on:
       - db
     restart: unless-stopped
