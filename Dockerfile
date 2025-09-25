@@ -4,7 +4,7 @@
 FROM php:8.2-apache
 
 # Copy in our custom php settings
-COPY my-php-settings.ini /usr/local/etc/php/conf.d/my-php-settings.ini
+COPY php-overrides.ini /usr/local/etc/php/php.ini
 
 # Install all the PHP extensions you could want. The whole shebang. 💪
 RUN apt-get update && apt-get install -y \
