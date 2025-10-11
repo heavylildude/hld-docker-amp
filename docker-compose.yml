@@ -28,6 +28,7 @@ services:
       - db_data:/var/lib/mysql # Keeps your data safe
     env_file: .env
     restart: unless-stopped
+    command: --sql_mode=""
 
   # Our NEW, custom-built phpMyAdmin that actually listens
   phpmyadmin:
@@ -45,4 +46,5 @@ services:
 
 volumes:
   db_data: # The volume for our precious data
+
 
